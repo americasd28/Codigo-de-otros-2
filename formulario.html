@@ -1,40 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es"> <!-- Cambié el idioma a 'es' para ajustarlo al contenido en español -->
+
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Mantengo el link a la hoja de estilos -->
   <link rel="stylesheet" type="text/css" media="screen" href="./styles.css">
-  <title>Formulario</title>
+  <title>Formulario de Asistencia</title> <!-- Cambié el título a algo más descriptivo -->
 </head>
+
+
 <body>
   <h1>Bienvenidos a mi fiesta</h1>
   <h2>Por favor, confirmar asistencia:</h2>
 
-  <form class="formulario">
-    Nombre <input type="text" name="name" id="name">
-    <br />
-    Edad <input type="number" name="age" id="age">
+
+  <!-- Añadí 'action="#"' para evitar que el formulario redirija al enviar -->
+  <form class="formulario" action="#" id="formulario"> <!-- Añadí un 'id' para facilitar el acceso desde JavaScript -->
+    <label for="name">Nombre</label> <!-- Usé 'label' para mejorar la accesibilidad -->
+    <input type="text" name="name" id="name" required> <!-- Añadí 'required' para validación básica -->
     <br />
 
-    Nacionalidad
-    <select name="nationality" id="nationality">
+
+    <label for="age">Edad</label> <!-- Usé 'label' para mejorar la accesibilidad -->
+    <input type="number" name="age" id="age" min="0" max="120" required> <!-- Añadí un rango de edad lógico -->
+    <br />
+
+
+    <label for="nationality">Nacionalidad</label> <!-- Usé 'label' para mejorar la accesibilidad -->
+    <select name="nationality" id="nationality" required> <!-- Añadí 'required' para asegurar la selección -->
+      <!-- Corregí los valores de los países -->
       <option value="ar">Argentina</option>
-      <option value="mx">Mexicana</option>
-      <option value="per">Peruana</option>
-      <option value="vnzl">Venezolana</option>
+      <option value="mx">México</option>
+      <option value="pe">Perú</option> <!-- Cambié 'per' por 'pe'  -->
+      <option value="ve">Venezuela</option> <!-- Cambié 'vnzl' por 've' para mantener consistencia -->
     </select>
     <br />
-    <input type="submit">
+
+
+    <input type="submit" value="Confirmar"> <!-- Añadí un texto más descriptivo al botón de envío -->
   </form>
 
-  <div>
-    <h2>Lista de invitados</h2>
 
+  <div id="lista-invitados"> <!-- Añadí un 'div' con id para manipulación dinámica en JS -->
+    <h2>Lista de invitados</h2>
   </div>
 
-  <script src="../formulario.js"></script>
+
+  <!-- Corregí la ruta del archivo JS para que apunte al directorio correcto -->
+  <script src="./formulario.js"></script>
 </body>
+
 
 </html>
